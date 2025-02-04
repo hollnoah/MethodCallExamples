@@ -8,6 +8,7 @@ Module MethodCallExamples
         Console.WriteLine("Hello from Sub Main")
         Console.WriteLine($"My lucky number is {myLuckyNumber}")
         Console.WriteLine()
+
         ' MyOtherSub() 'calls upon my other sub, like making a very large variable
         Sandwich(myLuckyNumber)
         Console.WriteLine("Hello from Sub Main")
@@ -22,6 +23,7 @@ Module MethodCallExamples
     End Sub
 
     Sub Sandwich(ByVal myLuckyNumber As Integer)
+        myLuckyNumber += 5
         Console.WriteLine("Hello from Sandwich!!")
         Console.WriteLine($"My lucky number is {myLuckyNumber}")
         Console.WriteLine()
