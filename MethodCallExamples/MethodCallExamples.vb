@@ -20,9 +20,10 @@ Module MethodCallExamples
         'Console.WriteLine(MyActualLuckyNumber)
         'Console.WriteLine(SumOf(5, 7))
 
-        For i = 1 To 10
+        For i = 1 To 100
 
-            Console.WriteLine(RandomNumber())
+            'Console.WriteLine(RandomNumber())
+            Console.WriteLine(RandomNumberBetween(0, 4)) 'sets the min and max for range of numbers
         Next
 
     End Sub
@@ -74,6 +75,13 @@ Module MethodCallExamples
 
     Function RandomNumberBetween(min As Integer, max As Integer) As Integer 'inclusive
         'actual code here
-        Return 0
+        Dim temp As Single 'assigns temp as a single point number (decimal percentage)
+        Randomize() 'gives different random numbers each time the program is run
+        temp = Rnd() 'makes the single point number random
+        temp *= max - min 'displays a random number through max-min (9-3= random number from 0 to 6)
+        temp += min 'shifts the minimum up so your random numbers range from min to max
+        Return CInt(temp) 'changes the temp from a signle point number to an integer
+
+
     End Function
 End Module
